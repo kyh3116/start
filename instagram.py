@@ -1,3 +1,4 @@
+-*- coding: utf-8 -*-
 import time
 import datetime
 import random
@@ -9,6 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
+from pyvirtualdisplay import Display
 import requests
 import json
 
@@ -42,6 +44,10 @@ class AutoInsta:
     @classmethod
     def run(cls, start_index=1, end_index=2):
         print('browser loading..')
+        display = Display(visible=0, size=(800,600))
+        display.start()
+        #browser 전에 display 선언해주기 ubuntu는 가상의 display
+        drive = webdriver.chrom()
         global browser
         browser = webdriver.Chrome('C:\\Users\\samsung\\python\\chromedriver', chrome_options=options)
         browser.get(url)
@@ -176,7 +182,7 @@ if __name__ == '__main__':
 
     ##ubuntu 에서 selenium 쓸 때 주의사항
     # -*- coding : utf-8 -*-
-    # pip3 install selenum pyvirtualdisplay
+    # pip3 install (selenium이거 빼니까 됨) pyvirtualdisplay
     # 코드에서 상단부분에 from pyvirtualdisplay import Display
     
     # display = Display(visible=0, size=(800,600))
