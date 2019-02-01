@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 import time
 import datetime
 import random
@@ -9,6 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
+from pyvirtualdisplay import Display
 import requests
 import json
 
@@ -24,8 +26,8 @@ options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6)
 options.add_argument("lang=ko_KR")
 
 # ======= 2. Setting id, password, hashtag ======
-id = '2004dydgns@naver.com'
-password = '984600ok*'
+id = ''
+password = ''
 url = 'https://www.instagram.com/accounts/login/?source=auth_switcher'
 timeline_like_count = 120
 
@@ -42,6 +44,9 @@ class AutoInsta:
     @classmethod
     def run(cls, start_index=1, end_index=2):
         print('browser loading..')
+        # display = Display(visible=0, size=(800,600))
+        # display.start()
+        #browser 전에 display 선언해주기 ubuntu는 가상의 display
         global browser
         browser = webdriver.Chrome('C:\\Users\\samsung\\python\\chromedriver', chrome_options=options)
         browser.get(url)
@@ -176,7 +181,7 @@ if __name__ == '__main__':
 
     ##ubuntu 에서 selenium 쓸 때 주의사항
     # -*- coding : utf-8 -*-
-    # pip3 install selenum pyvirtualdisplay
+    # pip3 install (selenium이거 빼니까 됨) pyvirtualdisplay
     # 코드에서 상단부분에 from pyvirtualdisplay import Display
     
     # display = Display(visible=0, size=(800,600))
