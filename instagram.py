@@ -26,8 +26,8 @@ options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6)
 options.add_argument("lang=ko_KR")
 
 # ======= 2. Setting id, password, hashtag ======
-id = ''
-password = ''
+id = '자신의 아이디'
+password = '자신의 비밀번호'
 url = 'https://www.instagram.com/accounts/login/?source=auth_switcher'
 timeline_like_count = 120
 
@@ -57,7 +57,7 @@ class AutoInsta:
         for i in range(start_index, end_index):
             
             
-            # cls.timeline_like()
+            cls.timeline_like()
             cls.hash_tags_like()
         end_text = "{id} Insta Auto Like End : {time}".format(id=id, time=datetime.datetime.now())
         print(end_text)
