@@ -26,8 +26,8 @@ options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6)
 options.add_argument("lang=ko_KR")
 
 # ======= 2. Setting id, password, hashtag ======
-id = '2004dydgns@naver.com'
-password = '984600ok*'
+id = ''
+password = ''
 url = 'https://www.instagram.com/accounts/login/?source=auth_switcher'
 timeline_like_count = 120
 
